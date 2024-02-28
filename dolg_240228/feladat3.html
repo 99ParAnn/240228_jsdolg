@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teglalap</title>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", init)
+        function init() {
+            let egyikOldal;
+            let masikOldal;
+            function kerulet() {
+                let egyikOldal = document.getElementById("egyikOldal").value;
+                let masikOldal = document.getElementById("masikOldal").value;
+                let tartalom = "A kerület: " + ( parseFloat(egyikOldal)+ parseFloat(masikOldal))*2
+
+                document.getElementById("bekezdes").textContent = tartalom;
+
+            }
+
+
+            function terulet(){
+                
+                let egyikOldal = document.getElementById("egyikOldal").value;
+                let masikOldal = document.getElementById("masikOldal").value;
+                let tartalom = "A terület: " + egyikOldal*masikOldal
+
+                document.getElementById("bekezdes").textContent = tartalom;
+            }
+
+
+
+            document.getElementById('kerulet').addEventListener('click', kerulet);
+            document.getElementById('terulet').addEventListener('click', terulet);
+        }
+
+    </script>
+</head>
+
+<body>
+    <input name="egyikOldal" type="number" placeholder="A téglalap egyik oldala" id="egyikOldal">
+    <input name="masikOldal" type="number" placeholder="A téglalap másik oldala" id="masikOldal">
+
+    <button id="kerulet" type="button">kerület kiírása</button>
+    <button id="terulet" type="button">terület kiírása</button>
+
+    <p id="bekezdes"></p>
+
+
+
+    </form>
+</body>
+
+</html>

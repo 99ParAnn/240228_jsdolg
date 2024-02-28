@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hetnapjai</title>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", init)
+        function init() {
+            let lista = []
+            function hozzaad() {
+                lista.push(document.getElementById("szam").value);
+            }
+            function kiir() {
+                let tartalom = lista[0]
+                for (let i = 1; i < lista.length; i++) {
+                    tartalom += ", " + lista[i]
+                }
+                document.getElementById("bekezdes").innerHTML = tartalom;
+            }
+
+
+
+            
+            document.getElementById('hozzaad').addEventListener('click', hozzaad);
+            document.getElementById('kiir').addEventListener('click', kiir);
+        }
+
+    </script>
+</head>
+
+<body>
+    <input name="szam" type="number" placeholder="Adjon meg egy számot" id="szam">
+    <button id="hozzaad" type="button">Hozzáad</button>
+    <button id="kiir" type="button" onclick="kiir()">Kiír</button>
+    <p id="bekezdes"></p>
+</body>
+
+</html>

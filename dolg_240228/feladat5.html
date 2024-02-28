@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hetnapjai</title>
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", init)
+        function init() {
+            let hetNapja;
+            function kiir() {
+                let szam = document.getElementById("hanyadikNap")
+                let tartalom
+                switch (szam) {
+                    case 1:
+                        tartalom = "Hétfő"
+                        break;
+                    case 2:
+                        tartalom = "Kedd"
+                        break;
+                    case 3:
+                        tartalom = "Szerda"
+                        break;
+                    case 4:
+                        tartalom = "Csütörtök"
+                        break;
+                    case 5:
+                        tartalom = "Péntek"
+                        break;
+                    case 6:
+                        tartalom = "Szombat"
+                        break;
+                    case 7:
+                        tartalom = "Vasárnap"
+                        break;
+                
+                    default:
+                        tartalom = "Nem megfelelő számot adott meg"
+                        break;
+                }
+                document.getElementById("bekezdes").textContent = tartalom;
+
+            }
+
+            document.getElementById('kiir').addEventListener('click', kiir);
+        }
+
+    </script>
+</head>
+
+<body>
+    <input name="hanyadikNap" type="number" placeholder="A kiírandó hét napjának a sorszáma" id="hanyadikNap">
+    <button id="kiir" type="button">Nap nevének kiírása</button>
+
+    <p id="bekezdes"></p>
+
+
+
+    </form>
+</body>
+
+</html>

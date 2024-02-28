@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nev</title>
+    
+    <script type="text/javascript">
+
+        document.addEventListener("DOMContentLoaded", init)
+        function init() {
+            function valtozott() {
+                let keresztnev = document.getElementById("keresztnev").value;
+                let vezeteknev = document.getElementById("vezeteknev").value;
+                let eletkor = document.getElementById("eletkor").value;
+                let tartalom = keresztnev + ' ' + vezeteknev + " (" + eletkor  + " év)"
+
+                document.getElementById("bekezdes").textContent = tartalom;
+            }
+            
+            document.getElementById('keresztnev').addEventListener('change', valtozott);
+            document.getElementById('vezeteknev').addEventListener('change', valtozott);
+            document.getElementById('eletkor').addEventListener('change', valtozott);
+        }
+
+    </script>
+</head>
+<body>
+    <input type="text" name="keresztnev" placeholder="keresztnév" id="keresztnev"><br>
+    <input type="text" name="vezeteknev" placeholder="vezetéknév" id="vezeteknev"><br>
+    <input type="number" name="eletkor" placeholder="életkor" id="eletkor"><br>
+    <p id ="bekezdes"></p>
+</body>
+</html>
